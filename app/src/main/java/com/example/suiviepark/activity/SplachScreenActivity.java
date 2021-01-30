@@ -50,7 +50,7 @@ public class SplachScreenActivity extends AppCompatActivity {
 
 
 
-        
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);

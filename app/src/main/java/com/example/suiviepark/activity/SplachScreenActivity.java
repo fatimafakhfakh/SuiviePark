@@ -38,12 +38,9 @@ public class SplachScreenActivity extends AppCompatActivity {
     String user, password, base, ip;
     boolean actif = false;
 
-
     private static int splash_screen = 3000;
     Animation topAnim;
     ImageView logo;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +48,10 @@ public class SplachScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splach_screen);
 
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+
+        
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         logo = findViewById(R.id.logo);
@@ -68,12 +67,9 @@ public class SplachScreenActivity extends AppCompatActivity {
         NomSociete = prefUser.getString("NomSociete", "");
         MotDePasse = prefUser.getString("MotDePasse", "");
 
-
-
         Log.e("Spach_etat_user", etatUser + "");
         SharedPreferences prefs = getSharedPreferences(Param.PEF_SERVER, Context.MODE_PRIVATE);
         etatSQL = prefs.getBoolean("etatsql", false);
-
 
         Log.e("Spach_etat_sql", etatSQL + "");
 
@@ -123,9 +119,7 @@ public class SplachScreenActivity extends AppCompatActivity {
                         startActivity(i);
                         finish();
 
-
                     }
-
 
                 } else {
 
@@ -134,12 +128,8 @@ public class SplachScreenActivity extends AppCompatActivity {
 
                 }
 
-
-
             }
         }, splash_screen);
-
-
 
     }
 

@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Suivie Park</string>
+    <string name="title_activity_home">MainActivity</string>
+
+    <string name="licence">Idéal Software Solutions</string>
+    <string name="title_activity_menu_home">MenuHome</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="home_second">Home Second</string>
+
+    <string name="garder_ma_session_active">Garder ma session active</string>
+    <string name="connexion">Connexion</string>
+    <string name="mdp">Mot de passe</string>
+    <string name="suivant">Suivant</string>
+    <string name="obilgatoire">Obligatoire</string>
+    <string name="confirmer_votre_mdp">Confirmer votre mot de passe</string>
+
+
+    <string name="identifiant">Entrer votre identifiant</string>
+    <string name="mot_de_passe">Entrer votre mot de passe</string>
+
+    <string name="title_home">Menu</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_basic">BasicActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+
+</resources>

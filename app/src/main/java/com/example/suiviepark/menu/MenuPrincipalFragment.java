@@ -2,6 +2,7 @@ package com.example.suiviepark.menu;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -21,6 +22,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 
+import com.example.suiviepark.ArticleVenduParJourActivity;
+import com.example.suiviepark.ChiffreAffaireGlobalActivity;
 import com.example.suiviepark.ConnectionClass;
 import com.example.suiviepark.R;
 import com.example.suiviepark.model.BoutonMenu;
@@ -85,21 +88,17 @@ public class MenuPrincipalFragment extends Fragment {
 
         gv_menu_principal = (GridView) root.findViewById(R.id.gv_menu_principal);
 
-
         ArrayList<BoutonMenu> list_bouton_principal = new ArrayList<>();
 
-
         // fill  list bouton
-        list_bouton_principal.add(new BoutonMenu(R.drawable.ic_vente, "Mouvement Vente"));
-        list_bouton_principal.add(new BoutonMenu(R.drawable.ic_achat, "Mouvement Achat"));
-        list_bouton_principal.add(new BoutonMenu(R.drawable.ic_statistique_rapport_act, "Statistique & Rapport Activité"));//&amp;
-        list_bouton_principal.add(new BoutonMenu(R.drawable.ic_etat_stock, "Etat de stock"));
-        list_bouton_principal.add(new BoutonMenu(R.drawable.ic_caisse, "Caisse"));
-        list_bouton_principal.add(new BoutonMenu(R.drawable.ic_chiffre_affaire, "Trésorerie"));
+        list_bouton_principal.add(new BoutonMenu(R.drawable.ic_chiffre_affaire, "CA  par restaurant"));
+        list_bouton_principal.add(new BoutonMenu(R.drawable.ic_chiffre_affaire, "CA des reastaurant"));
+        list_bouton_principal.add(new BoutonMenu(R.drawable.ic_statistique_rapport_act, "Article Vendu par Période"));
+        list_bouton_principal.add(new BoutonMenu(R.drawable.ic_benefice, "Benefice Article Vendu"));
+        list_bouton_principal.add(new BoutonMenu(R.drawable.ic_art_vendu_par_journee, "Article Vendu par journée"));
 
-        DoMenuParametrable doMenuParametrable = new DoMenuParametrable(list_bouton_principal);
-        doMenuParametrable.execute("");
-
+        /*DoMenuParametrable doMenuParametrable = new DoMenuParametrable(list_bouton_principal);
+        doMenuParametrable.execute("");*/
 
         MenuPrincipalGVAdapter adapter = new MenuPrincipalGVAdapter(getActivity(), list_bouton_principal);
         gv_menu_principal.setAdapter(adapter);
@@ -110,8 +109,6 @@ public class MenuPrincipalFragment extends Fragment {
 
 
     //select ModuleRepresantant from ParametreDiver
-
-
     public class DoMenuParametrable extends AsyncTask<String, String, String> {
         String z = "";
         Boolean isSuccess = false;
@@ -219,83 +216,21 @@ public class MenuPrincipalFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
 
-                   /* if (boutonMenu.getLibelle().equals("Mouvement Vente")) {
-                        Fragment fragment = new MenuVenteFragment();
-                        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                        if (fragment != null) {
-                            ft.replace(R.id.nav_host_fragment, fragment);
-                            ft.addToBackStack(null);
-                            ft.commit();
-                        }
+                   if (boutonMenu.getLibelle().equals("CA  par restaurant")) {
 
-                    } else if (boutonMenu.getLibelle().equals("Mouvement Achat")) {
-                        Fragment fragment = new MenuAchatFragment();
-                        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                        if (fragment != null) {
-                            ft.replace(R.id.nav_host_fragment, fragment);
-                            ft.addToBackStack(null);
-                            ft.commit();
-                        }
+                       getActivity().startActivity(new Intent(getActivity()  , ChiffreAffaireGlobalActivity.class));
 
-                    } else if (boutonMenu.getLibelle().equals("Statistique & Rapport Activité")) {
-
-                        getActivity().getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.nav_host_fragment, new MenuStatistiqueFragment())
-                                .addToBackStack(MenuAchatFragment.class.getSimpleName())
-                                .commit();
-
-
-                    } else if (boutonMenu.getLibelle().equals("Etat de stock")) {
-                        Fragment fragment = new MenuStockFragment();
-                        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                        if (fragment != null) {
-                            ft.replace(R.id.nav_host_fragment, fragment);
-                            ft.addToBackStack(null);
-                            ft.commit();
-                        }
-
-
-                    } else if (boutonMenu.getLibelle().equals("Gestion Representant")) {
-                        Fragment fragment = new MenuRepFragment();
-                        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                        if (fragment != null) {
-                            ft.replace(R.id.nav_host_fragment, fragment);
-                            ft.addToBackStack(null);
-                            ft.commit();
-                        }
 
                     }
-                    //
-                    else if (boutonMenu.getLibelle().equals("Caisse")) {
-                        Fragment fragment = new CaisseFragment();
-                        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                        if (fragment != null) {
-                            ft.replace(R.id.nav_host_fragment, fragment);
-                            ft.addToBackStack(null);
-                            ft.commit();
-                        }
 
-                    } else if (boutonMenu.getLibelle().equals("Production")) {
-                        Fragment fragment = new MenuProductionFragment();
-                        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                        if (fragment != null) {
-                            ft.replace(R.id.nav_host_fragment, fragment);
-                            ft.addToBackStack(null);
-                            ft.commit();
-                        }
+                   else if  (boutonMenu.getLibelle().equals("Article Vendu par Période")) {
 
-                    } else if (boutonMenu.getLibelle().equals("Trésorerie")) {
-                        Fragment fragment = new MenuTresorerieFragment();
-                        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                        if (fragment != null) {
-                            ft.replace(R.id.nav_host_fragment, fragment);
-                            ft.addToBackStack(null);
-                            ft.commit();
-                        }
+                        getActivity().startActivity(new Intent(getActivity()  , ArticleVenduParJourActivity.class));
 
-                    }*/
+                    }
 
-//Tresorerie
+
+
                 }
             });
 

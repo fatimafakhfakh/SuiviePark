@@ -12,7 +12,7 @@ public class MenuViewModel extends ViewModel {
         mText = new MutableLiveData<>();
 
 
-        
+
         mText.setValue("This is dashboard fragment");
 
 

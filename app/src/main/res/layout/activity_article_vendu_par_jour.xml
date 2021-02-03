@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_echek_2"
+    tools:context=".ArticleVenduParJourActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_echek_2"
+        tools:context=".module.vente.EtatLivraisonActivity">
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            tools:openDrawer="start">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.appbar.AppBarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/AppTheme.AppBarOverlay">
+
+                        <devs.mulham.horizontalcalendar.HorizontalCalendarView
+                            android:id="@+id/calendarView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/back_echek_3"
+                            app:selectorColor="#BF030E"
+                            app:textColorNormal="#bababa"
+                            app:textColorSelected="#BF030E" />
+
+
+                    </com.google.android.material.appbar.AppBarLayout>
+
+
+                    <com.google.android.material.tabs.TabLayout
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/tab_session"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/transparent"
+                        app:tabIndicatorColor="#c97700"
+                        app:tabSelectedTextColor="#c97700"
+                        app:tabTextColor="@color/gris" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/ll_session"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/round_cardre_rouge"
+                        android:layout_margin="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ouvert le "
+                                android:textColor="@color/colorPrimary2"
+                                android:layout_margin="5dp"
+                                android:textSize="10dp"/>
+
+                            <TextView
+                                android:id="@+id/txt_date_ouverture"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ouvert le "
+                                android:textColor="@color/perms_dangerous_grp_color"
+                                android:textSize="12dp"
+                                android:layout_margin="5dp"/>
+
+                            <ImageView
+                                android:id="@+id/img_cloture"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_cloture"
+                                android:layout_margin="5dp"/>
+
+
+                            <TextView
+                                android:id="@+id/txt_libelle_cloture"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Clôturé le "
+                                android:textColor="@color/blue_prix"
+                                android:layout_margin="5dp"
+                                android:textSize="10dp"/>
+
+                            <TextView
+                                android:id="@+id/txt_date_cloture"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ouvert le "
+                                android:layout_margin="5dp"
+                                android:textSize="12dp"
+                                android:textColor="@color/perms_dangerous_grp_color"/>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Etablie par "/>
+
+                            <TextView
+                                android:id="@+id/txt_nom_utilisateur"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" User "
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <!--   app:tabMode="scrollable"   -->
+
+                    <RelativeLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:padding="5dp"
+                      >
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+
+                            <ListView
+                                android:id="@+id/lv_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginBottom="80dp"
+                                android:divider="#00000000"
+                                android:dividerHeight="1dp" />
+
+
+                        </LinearLayout>
+
+
+                        <ProgressBar
+                            android:id="@+id/pb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="?android:attr/textColorTertiaryInverse"
+                android:fitsSystemWindows="true" />
+
+            <!--      app:headerLayout="@layout/menu_vente"  -->
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+        <include layout="@layout/bottom_sheet" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <include layout="@layout/banniere_societe" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

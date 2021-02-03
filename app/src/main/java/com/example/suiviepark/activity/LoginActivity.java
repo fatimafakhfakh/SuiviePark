@@ -195,7 +195,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     SharedPreferences prefs = activity.getSharedPreferences(Param.PREF_USER, Context.MODE_PRIVATE);
                     SharedPreferences.Editor edt = prefs.edit();
-                    edt.putBoolean("etat", true);
+                    edt.putBoolean("etatuser", true);
                     edt.putString("NomUtilisateur", NomUtilisateur);
                     edt.putString("MotDePasse", MotDePasse);
                     edt.putString("NomSociete", NomSociete);

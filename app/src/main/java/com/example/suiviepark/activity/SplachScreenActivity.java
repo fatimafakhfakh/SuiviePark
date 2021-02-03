@@ -237,7 +237,7 @@ public class SplachScreenActivity extends AppCompatActivity {
                     SharedPreferences prefs = getSharedPreferences(Param.PREF_USER, Context.MODE_PRIVATE);
                     SharedPreferences.Editor edt = prefs.edit();
 
-                    edt.putBoolean("etat", true);
+                    edt.putBoolean("etatuser", true);
                     edt.putString("NomUtilisateur", NomUtilisateur);
                     edt.putString("NomSociete", NomSociete);
                     edt.putString("MotDePasse", MotDePasse);
